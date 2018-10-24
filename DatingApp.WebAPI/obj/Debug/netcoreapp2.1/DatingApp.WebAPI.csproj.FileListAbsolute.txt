@@ -17,7 +17,6 @@ C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\bin\Debug\n
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\bin\Debug\netcoreapp2.1\DatingApp.WebAPI.runtimeconfig.dev.json
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\bin\Debug\netcoreapp2.1\DatingApp.WebAPI.dll
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\bin\Debug\netcoreapp2.1\DatingApp.WebAPI.pdb
-C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.csprojAssemblyReference.cache
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.csproj.CoreCompileInputs.cache
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.RazorAssemblyInfo.cache
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.RazorAssemblyInfo.cs
@@ -26,3 +25,4 @@ C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\n
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.dll
 C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.pdb
+C:\Users\Amit Tyagi\Desktop\Amit\Projects\DatingApp\DatingApp.WebAPI\obj\Debug\netcoreapp2.1\DatingApp.WebAPI.csprojResolveAssemblyReference.cache
