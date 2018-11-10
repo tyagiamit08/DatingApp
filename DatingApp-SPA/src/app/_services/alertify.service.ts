@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 
 // We dont need to import alertify here as it is globally available
 // as it is present in angular.json
-const alertify = require('alertifyjs');
+declare let alertify: any;
+
 @Injectable({
   providedIn: 'root'
 })
