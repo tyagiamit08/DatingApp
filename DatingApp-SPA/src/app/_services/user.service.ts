@@ -9,20 +9,18 @@ import { User } from '../_models/User';
 })
 export class UserService {
   baseUrl = environment.apiUrl + 'Users';
-  httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: 'Bearer ' + localStorage.getItem('token')
-    })
-  };
 
   constructor(private http: HttpClient) {}
 
-  // getUsers() {
+  // getUsers() { This also works fine
+  //   return this.http.get(this.baseUrl);
+  // }
+
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.baseUrl, this.httpOptions);
+    return this.http.get<User[]>(this.baseUrl);
   }
 
   getUser(id): Observable<User> {
-    return this.http.get<User>(this.baseUrl + '/' + id, this.httpOptions);
+    return this.http.get<User>(this.baseUrl + '/' + id);
   }
 }
