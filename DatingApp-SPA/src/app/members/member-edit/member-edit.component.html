@@ -19,7 +19,7 @@
         <div class="card-body">
           <div>
             <strong>Location:</strong>
-            <p>{{ user.city }},{{ user.country }}</p>
+            <p>{{ user.city }},{{ user.country }} {{ user.id }}</p>
           </div>
           <div>
             <strong>Age:</strong>
@@ -39,6 +39,7 @@
             [disabled]="!editForm.dirty"
             form="editForm"
             class="btn btn-success w-100"
+            (click)="updateUser(user.id)"
           >
             Save Changes
           </button>
@@ -80,11 +81,11 @@
                   name="city"
                   [(ngModel)]="user.city"
                 />
-                <label for="city">Country</label>
+                <label for="country">Country</label>
                 <input
                   type="text"
                   class="form-control"
-                  name="city"
+                  name="country"
                   [(ngModel)]="user.country"
                 />
               </div>
