@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { UserService } from 'src/app/_services/user.service';
-import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-member-edit',
@@ -24,8 +23,7 @@ export class MemberEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private alertify: AlertifyService,
-    private userService: UserService,
-    private authService: AuthService
+    private userService: UserService
   ) {}
 
   ngOnInit() {

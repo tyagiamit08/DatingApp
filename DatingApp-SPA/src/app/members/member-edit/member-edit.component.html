@@ -19,7 +19,7 @@
         <div class="card-body">
           <div>
             <strong>Location:</strong>
-            <p>{{ user.city }},{{ user.country }} {{ user.id }}</p>
+            <p>{{ user.city }},{{ user.country }}</p>
           </div>
           <div>
             <strong>Age:</strong>
@@ -37,7 +37,6 @@
         <div class="card-footer">
           <button
             [disabled]="!editForm.dirty"
-            form="editForm"
             class="btn btn-success w-100"
             (click)="updateUser(user.id)"
           >
@@ -50,7 +49,7 @@
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="Edit Profile">
-            <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
+            <form #editForm="ngForm" id="editForm">
               <h4>Description</h4>
               <textarea
                 name="introduction"
