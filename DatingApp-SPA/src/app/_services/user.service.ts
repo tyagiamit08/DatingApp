@@ -35,4 +35,8 @@ export class UserService {
     );
     // As this is a post request so it is mandatory to send something in body so we are sending {} in the body
   }
+
+  deletePhoto(userId: number, photoId: number) {
+    return this.http.delete(this.baseUrl + '/' + userId + '/photos/' + photoId);
+  }
 }
