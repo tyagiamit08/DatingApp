@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using DatingApp.WebAPI.Data;
 using DatingApp.WebAPI.DTOs;
 using DatingApp.WebAPI.Models;
@@ -18,11 +19,13 @@ namespace DatingApp.WebAPI.Controllers
     {
         private readonly IAuthRepository _authRepository;
         private readonly IConfiguration _configuration;
+        private readonly IMapper _mapper;
 
-        public AuthController(IAuthRepository authRepository, IConfiguration configuration)
+        public AuthController(IAuthRepository authRepository, IConfiguration configuration, IMapper mapper)
         {
             _authRepository = authRepository;
             _configuration = configuration;
+            _mapper = mapper;
         }
 
         [HttpPost("Register")]
@@ -45,15 +48,15 @@ namespace DatingApp.WebAPI.Controllers
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
-            var user = await _authRepository.Login(userForLoginDto.UserName, userForLoginDto.Password);
+            var userFromRepo = await _authRepository.Login(userForLoginDto.UserName, userForLoginDto.Password);
 
-            if (user == null)
+            if (userFromRepo == null)
                 return Unauthorized();
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
-                new Claim(ClaimTypes.Name,user.UserName)
+                new Claim(ClaimTypes.NameIdentifier,userFromRepo.Id.ToString()),
+                new Claim(ClaimTypes.Name,userFromRepo.UserName)
             };
 
             var key = new SymmetricSecurityKey(
@@ -70,10 +73,11 @@ namespace DatingApp.WebAPI.Controllers
             };
 
             var token = new JwtSecurityTokenHandler().CreateToken(tokenDescriptor);
-
+            var user = _mapper.Map<UsersGridDto>(userFromRepo);
             return Ok(new
             {
-                token = new JwtSecurityTokenHandler().WriteToken(token)
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                user
             });
         }
     }

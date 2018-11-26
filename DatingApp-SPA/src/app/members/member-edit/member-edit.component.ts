@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { UserService } from 'src/app/_services/user.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-member-edit',
@@ -12,6 +13,7 @@ import { UserService } from 'src/app/_services/user.service';
 })
 export class MemberEditComponent implements OnInit {
   user: User;
+  photoUrl: string;
   @ViewChild('editForm') editForm: NgForm;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
@@ -23,12 +25,16 @@ export class MemberEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private alertify: AlertifyService,
-    private userService: UserService
+    private userService: UserService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data['user'];
+    });
+    this.authService.currentUserPhotoUrl.subscribe(photoUrl => {
+      this.photoUrl = photoUrl;
     });
   }
 

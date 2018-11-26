@@ -28,7 +28,7 @@ namespace DatingApp.WebAPI.Controllers
         public async Task<IActionResult> GetUsers()
         {
             var users = await _datingRepository.GetUsers();
-            var usersToReturn = _autoMapper.Map<IEnumerable<UsersListDto>>(users);
+            var usersToReturn = _autoMapper.Map<IEnumerable<UsersGridDto>>(users);
             return Ok(usersToReturn);
         }
 

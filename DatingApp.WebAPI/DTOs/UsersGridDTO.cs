@@ -2,7 +2,7 @@
 
 namespace DatingApp.WebAPI.DTOs
 {
-    public class UsersListDto
+    public class UsersGridDto
     {
         public int Id { get; set; }
         public string UserName { get; set; }
