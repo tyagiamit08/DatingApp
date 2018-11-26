@@ -27,4 +27,12 @@ export class UserService {
   updateUser(userId: number, userToUpdate: User) {
     return this.http.put(this.baseUrl + '/' + userId, userToUpdate);
   }
+
+  setMainPhoto(userId: number, photoId: number) {
+    return this.http.post(
+      this.baseUrl + '/' + userId + '/photos/' + photoId + '/SetMain',
+      {}
+    );
+    // As this is a post request so it is mandatory to send something in body so we are sending {} in the body
+  }
 }
