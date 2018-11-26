@@ -17,7 +17,7 @@ import { ErrorInterceptorProvider } from './_services/error.Interceptor';
 import { AlertifyService } from './_services/alertify.service';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberGridComponent } from './members/member-grid/member-grid.component';
 import { appRoutes } from './appRoute';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
@@ -42,7 +42,7 @@ export function tokenGetter() {
     RegisterComponent,
     ListsComponent,
     MessagesComponent,
-    MemberListComponent,
+    MemberGridComponent,
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
