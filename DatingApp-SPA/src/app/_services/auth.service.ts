@@ -13,7 +13,6 @@ export class AuthService {
   baseUrl = environment.apiUrl + 'auth/';
   jwtHelper = new JwtHelperService();
   decodedToken: any;
-  currentUser: User;
   photoUrl = new BehaviorSubject<string>('../../assets/user.png');
   currentUserPhotoUrl = this.photoUrl.asObservable();
 
@@ -30,8 +29,7 @@ export class AuthService {
           localStorage.setItem('token', response.token);
           localStorage.setItem('user', JSON.stringify(response.user));
           this.decodedToken = this.jwtHelper.decodeToken(response.token);
-          this.currentUser = response.user;
-          this.changeLoggedInUserPhoto(this.currentUser.photoUrl);
+          this.changeLoggedInUserPhoto(response.user.photoUrl);
         }
       })
     );

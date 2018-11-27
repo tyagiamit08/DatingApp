@@ -76,11 +76,9 @@ export class PhotoEditorComponent implements OnInit {
           this.currentMainPhoto.isMain = false;
           photo.isMain = true;
           this.authService.changeLoggedInUserPhoto(photo.url);
-          this.authService.currentUser.photoUrl = photo.url;
-          localStorage.setItem(
-            'user',
-            JSON.stringify(this.authService.currentUser)
-          );
+          const user = JSON.parse(localStorage.getItem('user'));
+          user.photoUrl = photo.url;
+          localStorage.setItem('user', JSON.stringify(user));
         },
         error => {
           this.alertifyService.error(error);
